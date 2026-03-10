@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #  RiskMap — Plataforma web de reporte de hurtos en Bogotá
 
 RiskMap es una aplicación web desarrollada en **Python con Flask** que permite a ciudadanos reportar incidentes de hurto en Bogotá, y a administradores gestionar y visualizar esos reportes desde un panel de control.
