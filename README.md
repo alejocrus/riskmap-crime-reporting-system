@@ -119,7 +119,6 @@ Proyecto desarrollado como parte del curso de **Programación Web / Bases de Dat
 Estudiante de Ingenieria De Sistemas — Minuto de Dios 
 github.com/alejocrus 
 
-=======
 # riskmap-crime-reporting-system
 Aplicación web en Python/Flask para reportar y visualizar zonas de hurto en Bogotá, con panel administrativo, autenticación por roles y base de datos MySQL.
 
