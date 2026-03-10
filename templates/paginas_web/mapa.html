@@ -1,0 +1,49 @@
+{% extends 'layout.html' %}
+{% block title %}Mapa Bogotá{% endblock %}
+
+  
+{% block content %}
+  {% include 'dashboard.html'  %}
+  <div id="coords">Lat: --, Lng: --</div>
+  <div id="map"></div>
+
+  <script>
+    const map = L.map('map').setView([4.648, -74.1], 12); // Coordenadas Bogotá
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    L.marker([4.63653, -74.08394])
+      .addTo(map)
+      .bindPopup('Universidad Nacional de Colombia')
+      .openPopup();
+
+    L.marker([4.87417, -74.14132])
+      .addTo(map)
+      .bindPopup('Casa de Jhoan')
+      .openPopup();
+
+    L.marker([4.70254, -74.21658])
+      .addTo(map)
+      .bindPopup('Casa de Gambi')
+      .openPopup();
+
+    L.marker([4.58158, -74.09702])
+      .addTo(map)
+      .bindPopup('Casa de Juan')
+      .openPopup();
+
+    L.marker([4.69843, -74.08929])
+      .addTo(map)
+      .bindPopup('Universidad Minuto de Dios')
+      .openPopup();
+
+
+    // Mostrar coordenadas al mover el mouse
+    map.on('mousemove', function(e) {
+      document.getElementById('coords').textContent =
+        `Lat: ${e.latlng.lat.toFixed(5)}, Lng: ${e.latlng.lng.toFixed(5)}`;
+    });
+  </script>
+{% endblock %}

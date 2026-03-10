@@ -1,0 +1,297 @@
+body {
+ background-color: #e8e8e8 !important;
+
+}
+
+/*-------------------------------------- Estilos personalizados llamativos --------------------------------------*/
+.custom-navbar {
+  background-color: #333333;
+  padding: 1rem 2rem;
+  height: 65px !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.custom-logo {
+  color: #b90504;
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+
+.custom-link {
+  color: #f6f6f6 !important;
+  margin-right: 1rem;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  position: relative;
+}
+
+.custom-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background-color: #b90504;
+  transition: width 0.3s;
+}
+
+.custom-link:hover {
+  color: #b90504 !important;
+}
+
+.custom-link:hover::after {
+  width: 100%;
+}
+
+.custom-btn {
+  background-color: #990100 !important;
+  color: #f6f6f6 !important;
+  border: none;
+  transition: background-color 0.3s;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-weight: 500;
+  transition: transform 0.3s ease, background-color 0.3s ease !important;
+}
+
+.custom-btn:hover {
+  background-color: #b90504 !important;
+  color: #f6f6f6 !important;
+  transform: scale(1.04);
+}
+
+/*-------------------------------------- tarjeta reportar --------------------------------------*/
+
+.custom-report-card {
+  background-color: #f6f6f6 !important;
+  border: 2px solid #333  !important;
+  border-radius: 1rem;
+  position: relative;
+  padding: 2rem 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.custom-report-card:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.btn-report {
+  background-color: #b90504 !important;
+  color: white !important;
+  font-weight: bold;
+  border-radius: 2rem;
+  transition: transform 0.3s ease !important;
+}
+
+.btn-report:hover {
+  transform: scale(1.08);
+}
+
+.decor-left,
+.decor-right {
+  font-size: 2rem;
+  color: #333333 !important;
+  position: absolute;
+  top: 1rem;
+}
+
+.decor-left {
+  left: 1rem;
+}
+
+.decor-right {
+  right: 1rem;
+}
+
+/*-------------------------------------- mapa --------------------------------------*/
+/*-------------------------------------- mapa --------------------------------------*/
+
+.btn-mapa{
+  background-color: #333333 !important;
+  color: #f6f6f6 !important;
+  transition: background-color 0.3s;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-weight: 500;
+  transition: transform 0.3s ease, background-color 0.3s ease !important;
+}
+
+.btn-mapa:hover {
+  background-color: #4e4e4e !important;
+  transform: scale(1.08);
+}
+
+.map-section {
+  background-image: url('../img/bogota.png');
+  background-size: cover;
+  text-shadow:
+    -2px -2px 0 #333,
+     2px -2px 0 #333,
+    -2px  2px 0 #333,
+     2px  2px 0 #333;
+  font-weight: bold;
+  border: 2px solid #333  !important;
+  text-align: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 1;
+}
+
+.map-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(133, 133, 133, 0.514); /* opcional: capa para que el mapa se vea bien */
+  z-index: -1;
+}
+
+#map {
+  height: 100vh; /* 100% del alto de la ventana */
+  width: 100%;
+}
+
+#coords {
+      position: fixed;
+      top: 80px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(255,255,255,0.9);
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      z-index: 1002;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+/*-------------------------------------- tarjetas --------------------------------------*/
+
+.custom-card {
+  background-color: #f6f6f6 !important; /* o prueba con #e8e8e8 o #990100 */
+  border: 2px solid #333333 !important;
+  
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.custom-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.custom-card .card-title {
+  color: #990100;
+  font-weight: bold;
+}
+
+/* separador */
+
+.wave-divider {
+  line-height: 0;
+  overflow: hidden;
+}
+
+.wave-divider svg {
+  display: block;
+  width: 100%;
+  height: 100px;
+}
+
+.gradient-line {
+  width: 96%;
+  height: 3px;
+  background: linear-gradient(to right, #e8e8e8, #333333, #e8e8e8);
+  border-radius: 2px;
+}
+
+
+/* -------------------------- MAPA BOGOTA -------------------------- */
+.mapa-container {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Pantalla completa */
+  overflow: hidden;
+}
+.mapa-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+/* -------------------------- FIN MAPA BOGOTA -------------------------- */
+
+/* -------------------------- FORMULARIO REPORTE -------------------------- */
+.form-container {
+  max-width: 600px;
+  margin-top: 10000px;
+  margin: auto;
+  padding: 55%;
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.ContenedorFormulario{
+  margin-top: 50px;
+}
+
+h1 {
+  color: #B22222;
+  text-align: center;
+}
+
+.info-suceso {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px;
+  background-color: #B22222;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #8B0000;
+}
+
+/* -------------------------- FORMULARIO REPORTE -------------------------- */
+
+.custom-form-box {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 1rem;
+  border: 2px solid #990100;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 400px;
+}

@@ -1,0 +1,37 @@
+{% extends 'layout.html' %}
+
+{% block title %} Zona de Administradores {% endblock %}
+
+{% block content %}
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
+  <div class="container-fluid">
+    <img src="{{url_for('static', filename='img/logo_principal.png')}}" alt="Logo"
+      style="width: 110px; height: 80px; margin-right: 10px;">
+    <a class="navbar-brand custom-logo" href="#">RISK MAP</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav align-items-lg-center">
+        <li class="nav-item">
+          <a class="nav-link custom-link" href="{{url_for('home')}}">Salir</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="reporteDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Opciones de Reportes
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="reporteDropdown">
+            <li><a class="dropdown-item" href="{{url_for('reporte_clientes')}}">Clientes Registrados</a></li>
+            <li><a class="dropdown-item" href="{{url_for('reporte_hurtos')}}">Hurtos Registrados</a></li>
+          </ul>
+        </li>
+      </ul>
+      
+    </div>
+  </div>
+</nav>
+
+{% endblock %}

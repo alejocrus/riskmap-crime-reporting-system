@@ -1,0 +1,13 @@
+version = pip 25.0.1
+flask==3.1.0
+bootstrap version = 5.3.5-dist
+flask-sqlalchemy==3.1.1
+sqlalchemy==2.0.40
+config==0.5.1
+pymysql==1.1.1
+
+
+
+
+
+

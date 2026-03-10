@@ -1,0 +1,37 @@
+<!-- llamar a layout -->
+{% extends "layout.html" %}
+
+{% block title %} Reporte {% endblock %}
+
+{% include 'dashboard.html' %}
+<!-- Contenido -->
+{% block content %}
+<div class="ContenedorFormulario">
+  <div class="form-container">
+    <h1>¡Gracias por informar!</h1>
+    <form method="post" action="{{ url_for('formulario_reporte') }}">
+      <label for="zona_reporte">Cuentenos en que zona sufrió el robo</label>
+      <textarea id="zona_reporte" name="zona_reporte" rows="2" required></textarea>
+
+      <label for="hora_reporte">¿A que hora sucedió? Ingreselo en formato 00:00:00</label>
+      <input type="text" id="hora_reporte" name="hora_reporte" required>
+
+      <label for="descripcion">Cuentenos una breve descripcion de los hechos</label>
+      <textarea id="descripcion" name="descripcion" rows="3" required></textarea>
+
+      <label for="tipo">Tipo de hurto:</label>
+      <select id="tipo" name="tipo" required>
+        <option value="">-- Selecciona una opción --</option>
+        <option value="1">Robo de motocicleta</option>
+        <option value="2">Robo de celular</option>
+        <option value="3">Robo a vivienda</option>
+        <option value="4">Robo a comercio</option>
+        <option value="5">Robo de vehículo</option>
+      </select>
+
+      <button type="submit">Enviar reporte</button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,22 @@
+<!-- FOOTER -->
+<footer class="bg-dark text-light py-5">
+  <div class="container">
+    <div class="row">
+      <!-- Información del proyecto -->
+      <div class="col-md-6">
+        <h5>RiskMap Bogotá</h5>
+        <p>
+          En busca de combatir el hurto en Bogotá 
+        </p>
+        <p>
+          &copy; 2025 Por una ciudad mas segura - Todos los derechos reservados.
+        </p>
+      </div>
+      <li class="nav-item">
+        <a class="nav-link custom-link" href="{{url_for('formulario_registro')}}">Registrarme</a>
+      </li>
+      <!-- Formulario de contacto -->
+      {% include 'formularios/Frm_contacto.html' %}
+    </div>
+  </div>
+</footer>

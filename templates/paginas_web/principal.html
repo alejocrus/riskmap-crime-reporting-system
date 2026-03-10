@@ -1,0 +1,114 @@
+<!-- llamar a lauyout -->
+{% extends "layout.html" %}
+<!-- mostrar informacion -->
+{% block content %}
+    {% include 'dashboard.html'  %}
+      <!-- MAPA PRINCIPAL -->
+      <section class="map-section bg-light position-relative" style="height: 400px;">
+        <div class="position-absolute top-50 start-50 translate-middle text-center">
+          <h1 class="map-title text-light mb-3">Ingresar al mapa</h1>
+          <a class="btn btn-mapa btn-lg" href="{{url_for('mapa_bogota')}}">Entrar</a>
+        </div>
+      </section>
+
+  <!-- reportar -->
+   
+  <section class="report-card-container py-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+          <div class="card text-center custom-report-card shadow">
+            <div class="card-body">
+              <div class="decor-left">★</div>
+              <h5 class="card-title mb-3 text-dark">¿Presenciaste algun hurto?</h5>
+              <p class="card-text text-secondary mb-4">Inicia sesión para reportar el hurto.</p>
+              <a href="{{url_for('formulario_login_cliente')}}" class="btn btn-danger px-4 py-2">Iniciar Sesion</a>
+              <div class="decor-right">★</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="gradient-line my-5 mx-auto"></div>
+
+  <!-- IMAGEN 1 + TEXTO -->
+  <section class="container py-5">
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <img src="{{url_for('static',filename='img/hurto_4.webp')}}" class="img-fluid border border-3 border-dark rounded" alt="Ladrón en acción">
+      </div>
+      <div class="col-md-6">
+        <h3>El problema del hurto en Bogotá</h3>
+        <p>El hurto a personas en Bogotá se ha convertido en una de las principales preocupaciones de los ciudadanos. Su ocurrencia varía según la localidad y la hora del día, haciendo que algunas zonas sean más peligrosas que otras.</p>
+        <p>Este proyecto surge como una respuesta a esta problemática creciente, buscando informar y empoderar a la ciudadanía.</p>
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- TEXTO + IMAGEN 2 -->
+  <section class="container py-5">
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <h3>¿Qué es RiskMap Bogotá?</h3>
+        <p>RiskMap Bogotá es una plataforma web diseñada para reportar incidentes de hurto y visualizar en un mapa las zonas de mayor riesgo. Los usuarios pueden registrar el lugar y la hora de un robo para alertar a otros ciudadanos.</p>
+        <p>Además, la aplicación analiza datos recolectados de fuentes oficiales y de encuestas ciudadanas para generar estadísticas útiles en tiempo real.</p>
+      </div>
+      <div class="col-md-6">
+        <img src="{{url_for('static',filename='img/estadisticas.png')}}" class="img-fluid border border-3 border-dark rounded" alt="Mapa interactivo">
+      </div>
+    </div>
+  </section>
+  
+
+  <div class="gradient-line my-5 mx-auto"></div>
+
+  <!-- TARJETAS -->
+  <section class="container py-5">
+    <div class="row text-center">
+      <div class="col-md-4 mb-4">
+        <div class="card custom-card h-100">
+          <img src="{{url_for('static',filename='img/hurto_2.png')}}" class="card-img-top" alt="Reporte ciudadano">
+          <div class="card-body">
+            <h5 class="card-title">Reportes ciudadanos</h5>
+            <p class="card-text">Los usuarios pueden reportar hurtos indicando el lugar, hora y detalles del incidente.</p>
+            <a class="btn custom-btn btn-danger w-100" href="{{url_for('formulario_reporte')}}">reportar</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card custom-card h-100">
+          <img src="{{url_for('static',filename='img/hurto_5.jpeg')}}" class="card-img-top" alt="Datos oficiales">
+          <div class="card-body">
+            <h5 class="card-title">Fuentes confiables</h5>
+            <p class="card-text">La información se complementa con datos del Concejo y la Policía de Bogotá.</p>
+            <a class="btn custom-btn btn-danger w-100" href="#formulario_contacto">contactanos</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card custom-card h-100">
+          <img src="{{url_for('static',filename='img/hurto_3.jpg')}}" class="card-img-top" alt="Análisis de riesgo">
+          <div class="card-body">
+            <h5 class="card-title">Zonas de riesgo</h5>
+            <p class="card-text">El sistema identifica barrios peligrosos según hora, zona y frecuencia de robos.</p>
+            <a class="btn custom-btn btn-danger w-100" href="#">ver mapa</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+  <div class="wave-divider">
+    <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+      <path d="M0,30 C360,90 1080,0 1440,60 L1440,100 L0,100 Z" fill="#990100"></path>
+    </svg>
+  </div>
+
+
+  {% include 'paginas_web/footer.html'  %}
+
+{%endblock%}

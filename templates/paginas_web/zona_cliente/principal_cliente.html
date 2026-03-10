@@ -1,0 +1,11 @@
+<!-- llamar a lauyout -->
+{% extends "layout.html" %}
+<!-- mostrar informacion -->
+{% block content %}
+    {% include 'dashboardCliente.html'  %}
+    <br><br><br><br><br>
+    <h1>¡Inicio de sesión exitoso!</h1>
+    <h3 class="text-center ">Aqui podrás realizar y ver todos lo registros de hurto</h3>
+    <br><br><br><br><br>
+    {% include 'paginas_web/footer.html'  %}
+{% endblock %}

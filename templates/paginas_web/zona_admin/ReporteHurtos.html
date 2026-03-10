@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+{% include 'dashboardAdmin.html' %}
+
+{% block title %} Reporte Hurtos {% endblock %}
+
+{% block content %} 
+    <br><br><br><br>
+    <h1 class="text-center">¡Bienvenido al área de reportes de Hurtos registrados!</h1>
+
+    <div class="container mt-4">
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped text-center">
+                <thead class="table-dark">
+                    <tr>
+                        <th>id_tipo</th>
+                        <th>nombre</th>
+                        <th>descripcion</th>
+                        
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for r in reportes %}
+                    <tr>
+                        <td>{{ r.id_tipo}}</td>
+                        <td>{{ r.nombre}}</td>
+                        <td>{{ r.descripcion }}</td>
+                        
+                        
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    {% include 'paginas_web/zona_admin/footer_admin.html' %}
+{% endblock %}

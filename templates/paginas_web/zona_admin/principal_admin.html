@@ -1,0 +1,253 @@
+<!-- principal_admin.html -->
+{% extends 'layout.html' %}
+
+{% include 'dashboardAdmin.html' %}
+
+{% block title %} Administrador {% endblock %}
+
+{% block content %} 
+    <br><br><br><br>
+    <h1 class="text-center">¡Bienvenido al menú de Administrador!</h1>
+    <h3 class="text-center">Base de datos completa del sistema</h3>
+
+    <div class="container mt-4">
+        <!-- Tabla registro -->
+        <h2 class="mt-5 mb-3">Tabla: Registro</h2>
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped text-center">
+                <thead class="table-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Correo</th>
+                        <th>Teléfono</th>
+                        <th>Contraseña</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for r in registros %}
+                    <tr>
+                        <td>{{ r.id_registro }}</td>
+                        <td>{{ r.nombre }}</td>
+                        <td>{{ r.correo }}</td>
+                        <td>{{ r.telefono }}</td>
+                        <td>{{ r.contrasena }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Tabla usuario -->
+        <h2 class="mt-5 mb-3">Tabla: Usuario</h2>
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped text-center">
+                <thead class="table-dark">
+                    <tr>
+                        <th>ID Usuario</th>
+                        <th>ID Registro</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for u in usuarios %}
+                    <tr>
+                        <td>{{ u.id_usuario }}</td>
+                        <td>{{ u.id_registro }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Tabla cuenta -->
+        <h2 class="mt-5 mb-3">Tabla: Cuenta</h2>
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped text-center">
+                <thead class="table-dark">
+                    <tr>
+                        <th>ID Cuenta</th>
+                        <th>Rol</th>
+                        <th>ID Usuario</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for c in cuentas %}
+                    <tr>
+                        <td>{{ c.id_cuenta }}</td>
+                        <td>{{ c.rol }}</td>
+                        <td>{{ c.id_usuario }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Tabla empleador -->
+        <h2 class="mt-5 mb-3">Tabla: Empleador</h2>
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped text-center">
+                <thead class="table-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Documento</th>
+                        <th>Email</th>
+                        <th>Dirección</th>
+                        <th>Teléfono</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for e in empleadores %}
+                    <tr>
+                        <td>{{ e.id_empleador }}</td>
+                        <td>{{ e.nombre }}</td>
+                        <td>{{ e.documento }}</td>
+                        <td>{{ e.email }}</td>
+                        <td>{{ e.direccion }}</td>
+                        <td>{{ e.telefono }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Tabla tipo_hurto -->
+        <h2 class="mt-5 mb-3">Tabla: Tipo Hurto</h2>
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped text-center">
+                <thead class="table-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Descripción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for t in tipos_hurto %}
+                    <tr>
+                        <td>{{ t.id_tipo }}</td>
+                        <td>{{ t.nombre }}</td>
+                        <td>{{ t.descripcion }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Tabla ubicacion -->
+        <h2 class="mt-5 mb-3">Tabla: Ubicación</h2>
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped text-center">
+                <thead class="table-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Barrio</th>
+                        <th>Localidad</th>
+                        <th>Latitud</th>
+                        <th>Longitud</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for u in ubicaciones %}
+                    <tr>
+                        <td>{{ u.id_ubicacion }}</td>
+                        <td>{{ u.barrio }}</td>
+                        <td>{{ u.localidad }}</td>
+                        <td>{{ u.latitud }}</td>
+                        <td>{{ u.longitud }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Tabla estado_prueba -->
+        <h2 class="mt-5 mb-3">Tabla: Estado Prueba</h2>
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped text-center">
+                <thead class="table-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Estado</th>
+                        <th>Fecha</th>
+                        <th>ID Reporte</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for e in estados_prueba %}
+                    <tr>
+                        <td>{{ e.id_estado }}</td>
+                        <td>{{ e.estado }}</td>
+                        <td>{{ e.fecha }}</td>
+                        <td>{{ e.id_reporte }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Tabla reporte -->
+        <h2 class="mt-5 mb-3">Tabla: Reporte</h2>
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped text-center">
+                <thead class="table-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Zona Reporte</th>
+                        <th>Hora Reporte</th>
+                        <th>Descripción</th>
+                        <th>ID Usuario</th>
+                        <th>ID Estado</th>
+                        <th>ID Ubicación</th>
+                        <th>ID Tipo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for r in reportes %}
+                    <tr>
+                        <td>{{ r.id_reporte }}</td>
+                        <td>{{ r.zona_reporte }}</td>
+                        <td>{{ r.hora_reporte }}</td>
+                        <td>{{ r.descripcion }}</td>
+                        <td>{{ r.id_usuario }}</td>
+                        <td>{{ r.id_estado }}</td>
+                        <td>{{ r.id_ubicacion }}</td>
+                        <td>{{ r.id_tipo }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Tabla accion -->
+        <h2 class="mt-5 mb-3">Tabla: Acción</h2>
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped text-center">
+                <thead class="table-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Tipo Acción</th>
+                        <th>Comentario</th>
+                        <th>Fecha/Hora</th>
+                        <th>ID Empleador</th>
+                        <th>ID Reporte</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for a in acciones %}
+                    <tr>
+                        <td>{{ a.id_accion }}</td>
+                        <td>{{ a.tipo_accion }}</td>
+                        <td>{{ a.comentario }}</td>
+                        <td>{{ a.fecha_hora }}</td>
+                        <td>{{ a.id_empleador }}</td>
+                        <td>{{ a.id_reporte }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    {% include 'paginas_web/zona_admin/footer_admin.html' %}
+{% endblock %}
