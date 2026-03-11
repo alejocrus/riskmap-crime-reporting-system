@@ -57,7 +57,7 @@ riskmap/
 ### 1. Clona el repositorio
 ```bash
 git clone https://github.com/alejocrus/riskmap-crime-reporting-system.git
-cd riskmap
+cd riskmap-crime-reporting-system
 ```
 
 ### 2. Instala las dependencias
