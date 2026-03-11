@@ -56,7 +56,7 @@ riskmap/
 
 ### 1. Clona el repositorio
 ```bash
-git clone https://github.com/tu-usuario/riskmap.git
+git clone https://github.com/alejocrus/riskmap-crime-reporting-system.git
 cd riskmap
 ```
 
